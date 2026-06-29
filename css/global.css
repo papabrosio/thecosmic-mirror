@@ -1,0 +1,352 @@
+/* ============================================================
+   The Cosmic Mirror — Global Styles
+   Cosmic Starlit Background + UI Foundations
+   =========================================================== */
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== COSMIC STARLIT BACKGROUND CANVAS ===== */
+/* Layered radial gradients create the deep-space nebula base */
+body {
+  background-color: #0a0a2e;
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(27, 17, 69, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 15%, rgba(74, 30, 138, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 80%, rgba(45, 27, 105, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 60%, rgba(124, 58, 237, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse at 25% 70%, rgba(42, 22, 82, 0.08) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Twinkling star field — GPU-accelerated opacity-only animation */
+/* Three layers at different speeds create parallax depth */
+.stars-layer-1,
+.stars-layer-2,
+.stars-layer-3 {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.stars-layer-1::before,
+.stars-layer-1::after,
+.stars-layer-2::before,
+.stars-layer-2::after,
+.stars-layer-3::before,
+.stars-layer-3::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background-repeat: repeat;
+  will-change: opacity;
+}
+
+/* Layer 1 — tiny distant stars, slowest twinkle */
+.stars-layer-1::before {
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 25% 45%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 40% 8%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 55% 62%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 70% 30%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 12% 82%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 92% 50%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 33% 92%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 62% 12%, rgba(255,255,255,0.4), transparent);
+  background-size: 200px 200px;
+  animation: twinkle-slow 4s ease-in-out infinite;
+}
+
+/* Layer 2 — medium stars, medium speed */
+.stars-layer-2::before {
+  background-image:
+    radial-gradient(1.5px 1.5px at 8% 25%, rgba(212,168,67,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 22% 58%, rgba(196,181,253,0.4), transparent),
+    radial-gradient(1.5px 1.5px at 38% 18%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1.5px 1.5px at 52% 78%, rgba(212,168,67,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 68% 42%, rgba(196,181,253,0.4), transparent),
+    radial-gradient(1.5px 1.5px at 82% 88%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 95% 22%, rgba(212,168,67,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 18% 68%, rgba(255,255,255,0.4), transparent);
+  background-size: 260px 260px;
+  animation: twinkle-medium 3s ease-in-out infinite 0.5s;
+}
+
+/* Layer 3 — larger bright stars, fastest twinkle */
+.stars-layer-3::before {
+  background-image:
+    radial-gradient(2px 2px at 14% 35%, rgba(240,215,140,0.6), transparent),
+    radial-gradient(2px 2px at 30% 72%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 48% 15%, rgba(196,181,253,0.5), transparent),
+    radial-gradient(2px 2px at 65% 55%, rgba(240,215,140,0.4), transparent),
+    radial-gradient(2px 2px at 80% 28%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 90% 82%, rgba(196,181,253,0.4), transparent);
+  background-size: 340px 340px;
+  animation: twinkle-fast 2.5s ease-in-out infinite 1s;
+}
+
+/* Nebula blur orbs — slow drifting colored clouds */
+.nebula-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+  will-change: transform;
+}
+
+.nebula-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #4a1e8a, transparent 70%);
+  top: 10%;
+  left: 5%;
+  animation: nebula-drift-1 25s ease-in-out infinite;
+}
+
+.nebula-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #2d1b69, transparent 70%);
+  top: 50%;
+  right: 0%;
+  animation: nebula-drift-2 30s ease-in-out infinite 5s;
+}
+
+.nebula-orb-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #1b1145, transparent 70%);
+  bottom: 10%;
+  left: 30%;
+  animation: nebula-drift-3 22s ease-in-out infinite 10s;
+}
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+/* Pure opacity transforms — GPU composited, no layout shifts */
+
+@keyframes twinkle-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes twinkle-medium {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes twinkle-fast {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes nebula-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+@keyframes nebula-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-25px, 25px) scale(1.08); }
+  66% { transform: translate(15px, -20px) scale(0.92); }
+}
+
+@keyframes nebula-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, 20px) scale(1.03); }
+  66% { transform: translate(-15px, -25px) scale(0.97); }
+}
+
+/* ===== GLASSMORPHISM CONTENT CONTAINERS ===== */
+/* Ensures text readability over the cosmic background */
+.glass-panel {
+  background: rgba(10, 10, 46, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(45, 27, 105, 0.3);
+}
+
+.glass-panel-light {
+  background: rgba(18, 18, 62, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(45, 27, 105, 0.25);
+}
+
+.glass-card {
+  background: rgba(10, 10, 46, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(45, 27, 105, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 168, 67, 0.4);
+  box-shadow: 0 0 20px rgba(212, 168, 67, 0.08);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d1b69;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a843;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: rgba(212, 168, 67, 0.3);
+  color: #e8e0f0;
+}
+
+/* ===== FOCUS ACCESSIBILITY ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #d4a843;
+  outline-offset: 2px;
+}
+
+/* ===== PROSE ===== */
+.prose p {
+  margin-bottom: 1.5rem;
+}
+
+/* ===== UTILITY ===== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .font-display {
+    letter-spacing: -0.02em;
+  }
+
+  /* Reduce nebula intensity on mobile for performance */
+  .nebula-orb {
+    filter: blur(60px);
+    opacity: 0.1;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .stars-layer-1::before,
+  .stars-layer-2::before,
+  .stars-layer-3::before,
+  /* ===== GLOBAL OVERFLOW PROTECTION ===== */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ===== STANDARDIZED SECTION PADDING ===== */
+  .section-padding-cosmic {
+    padding-top: clamp(5rem, 8vw, 10rem);
+    padding-bottom: clamp(5rem, 8vw, 10rem);
+  }
+
+  /* ===== NEBULA PULSE ANIMATION ===== */
+  @keyframes nebulaPulse {
+    0%, 100% { opacity: 0.15; transform: scale(1) translate(0px, 0px); }
+    50% { opacity: 0.3; transform: scale(1.1) translate(10px, -15px); }
+  }
+
+  .nebula-glow-orb {
+    animation: nebulaPulse 20s ease-in-out infinite;
+    filter: blur(100px);
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    max-width: 100vw;
+  }
+
+  /* ===== ENHANCED GLASS-CARD DEPTH ===== */
+  .glass-card {
+    background: linear-gradient(135deg, rgba(10, 10, 46, 0.6) 0%, rgba(27, 17, 69, 0.4) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(212, 168, 67, 0.4);
+    box-shadow: 0 0 20px rgba(212, 168, 67, 0.08);
+  }
+
+  /* ===== GLASS CARD PADDED ===== */
+  .glass-card-padded {
+    padding: clamp(1.5rem, 4vw, 3rem) !important;
+  }
+
+/* ===== MOBILE MENU OVERLAY ===== */
+#mobile-menu-overlay {
+  transition: opacity 0.3s ease, pointer-events 0.3s ease;
+}
+
+/* Hamburger animation states */
+#menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(2px, -2px);
+}
+#menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(2px, 2px);
+}
+
+/* ===== HOMEPAGE ALIGNMENT FRAMEWORK ENHANCEMENTS ===== */
+
+/* Glowing text animation for Signature Frequency tiles */
+@keyframes text-glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(212,168,67,0.35));
+    opacity: 1;
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(212,168,67,0.6));
+    opacity: 0.95;
+  }
+}
+
+.animate-glow-text {
+  animation: text-glow-pulse 3s ease-in-out infinite;
+}
+
+/* Special outer glow for Reflector tile */
+@keyframes reflector-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212,168,67,0.08), inset 0 0 15px rgba(212,168,67,0.03);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(212,168,67,0.15), inset 0 0 20px rgba(212,168,67,0.05);
+  }
+}
+
+.reflector-glow {
+  animation: reflector-pulse 4s ease-in-out infinite;
+}

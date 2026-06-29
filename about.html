@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Story — Ambrosio | The Cosmic Mirror</title>
+  <meta name="description" content="Ambrosio's journey as a Reflector with a 6/2 Profile. Discover how his Lunar Authority and objective cosmic wisdom became the foundation of The Cosmic Mirror." />
+  <meta name="keywords" content="Ambrosio, Human Design Reflector, 6/2 Profile, Role Model, Hermit, Lunar Authority, personal journey" />
+  <meta name="author" content="Ambrosio — The Cosmic Mirror" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="My Story — Ambrosio | The Cosmic Mirror" />
+  <meta property="og:description" content="The journey of a Reflector who learned to mirror the cosmos for others." />
+  <meta property="og:site_name" content="The Cosmic Mirror" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="My Story — Ambrosio | The Cosmic Mirror" />
+  <meta name="twitter:description" content="The journey of a Reflector who learned to mirror the cosmos for others." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cosmic: {
+              midnight: '#0a0a2e',
+              deep: '#12123e',
+              nebula: '#1a1050',
+              violet: '#2d1b69',
+              amethyst: '#4a1e8a',
+              glow: '#7c3aed',
+              gold: '#d4a843',
+              goldlight: '#f0d78c',
+              stardust: '#e8e0f0',
+              mist: '#c4b5fd',
+            }
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+            'twinkle': 'twinkle 4s ease-in-out infinite',
+          },
+          keyframes: {
+            float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-20px)' } },
+            glow: { '0%': { boxShadow: '0 0 20px rgba(212,168,67,0.3)' }, '100%': { boxShadow: '0 0 40px rgba(212,168,67,0.6)' } },
+            twinkle: { '0%, 100%': { opacity: '0.3' }, '50%': { opacity: '1' } },
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+</head>
+<body class="bg-cosmic-midnight text-cosmic-stardust font-body antialiased">
+
+  <!-- Navigation -->
+  <nav class="w-full fixed top-0 left-0 bg-slate-950/85 backdrop-blur-md border-b border-white/5 z-50 py-3 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-3 items-center">
+      <div class="flex justify-start"></div>
+      <div class="flex justify-center w-full">
+        <a href="index.html" class="block w-full max-w-[280px] sm:max-w-[340px] md:max-w-[420px] focus:outline-none transition-transform duration-300 hover:scale-[1.02]">
+          <img src="assets/images/lunar-phases-header.png" alt="The Cosmic Mirror" class="w-full h-auto object-contain block mx-auto">
+        </a>
+      </div>
+      <div class="flex justify-end">
+        <button id="menu-toggle" class="flex flex-col justify-between w-6 h-4 focus:outline-none group z-50" aria-label="Toggle Menu">
+          <span class="w-full h-[2px] bg-cosmic-gold rounded transition-all duration-300 origin-left"></span>
+          <span class="w-full h-[2px] bg-cosmic-gold rounded transition-all duration-300"></span>
+          <span class="w-full h-[2px] bg-cosmic-gold rounded transition-all duration-300 origin-left"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-cosmic-nebula via-cosmic-deep to-cosmic-midnight"></div>
+    <div class="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-cosmic-amethyst/15 rounded-full blur-3xl"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-cosmic-gold uppercase tracking-[0.3em] text-sm mb-6 font-medium">My Story</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">The Reflector's Path</h1>
+      <p class="text-xl text-cosmic-mist max-w-2xl mx-auto leading-relaxed">
+        I am a mirror. Not by choice — by design. This is how I learned to stop distorting and start reflecting.
+      </p>
+    </div>
+  </section>
+
+  <!-- Biographical Content -->
+  <section class="py-24 bg-cosmic-deep">
+    <div class="max-w-4xl mx-auto px-6">
+      <span class="text-xs uppercase font-light tracking-[0.3em] text-cosmic-gold block mb-3">The Reflector's Journey</span>
+      <h1 class="font-display text-4xl md:text-5xl text-white font-medium leading-tight mb-8">From the Chaos of the Ground to the <span class="italic text-cosmic-gold font-normal">Clarity of the Roof.</span></h1>
+      <div class="space-y-6">
+        <p class="font-body text-base text-slate-300 leading-relaxed">
+          For my first thirty years, I lived in my intense Line 3 phase of raw experimentation. My completely open Reflector design acted like an unconditional sponge. It was a chaotic storm of trial, error, and deep conditioning that inevitably bottomed out into a quiet, heavy disillusionment.
+        </p>
+        <p class="font-body text-base text-slate-300 leading-relaxed">
+          At 35, the experimental treadmill has slowed down, and the mechanics of my design have naturally shifted me onto the Line 6 'roof.' This current epoch of my life is defined by radical detachment, pristine observation, and unhurried processing.
+        </p>
+        <p class="font-body text-base text-slate-300 leading-relaxed">
+          By waiting a complete 28-day lunar cycle before initiating major alignments, I learned how to clear the static out of my own auric canvas. I built The Cosmic Mirror to sit as a highly patient, pristine mirror to reflect your absolute truth back to you, lifting the weight of who you were conditioned to be so you can step into who you were born to be.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-cosmic-midnight relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-cosmic-violet/20 via-transparent to-cosmic-amethyst/20"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Let Me Reflect You</h2>
+      <p class="text-xl text-cosmic-mist mb-10 max-w-2xl mx-auto">
+        Experience what it's like to be truly seen — through the objective lens of Human Design.
+      </p>
+      <a href="https://calendly.com/papabrosio360/cosmic-mirror-evaluation" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-5 bg-cosmic-gold text-cosmic-midnight font-semibold uppercase tracking-wider rounded hover:bg-cosmic-goldlight transition-all duration-300 animate-glow text-lg">
+        Book Your Reading
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-cosmic-midnight border-t border-cosmic-violet/30">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="font-display text-xl text-cosmic-gold">The Cosmic Mirror</p>
+        <p class="text-cosmic-stardust/50 text-sm">© 2026 The Cosmic Mirror. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="index.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Home</a>
+          <a href="about.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">About</a>
+          <a href="services.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Services</a>
+          <a href="resources.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Resources</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
