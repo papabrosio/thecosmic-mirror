@@ -72,7 +72,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="css/global.css" />
@@ -180,22 +180,32 @@
   </section>
 
   <!-- Notes from the Roof -->
-  <section class="py-24 relative z-10 w-full">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <!-- Decorative top accent -->
-      <div class="flex items-center justify-center gap-4 mb-10">
-        <span class="block w-12 h-px bg-gradient-to-r from-transparent to-cosmic-gold/40"></span>
-        <span class="text-cosmic-gold/60 text-sm">✦</span>
-        <span class="block w-12 h-px bg-gradient-to-l from-transparent to-cosmic-gold/40"></span>
-      </div>
-      <p class="text-xs uppercase tracking-[0.4em] text-cosmic-gold/70 block mb-8 font-mono">Notes from the Roof</p>
-      <blockquote class="font-display text-2xl md:text-3xl text-white/90 leading-relaxed italic max-w-2xl mx-auto">
-        "In my twenties, I thought alignment meant fixing everything that was broken. In my thirties, I realized alignment is simply having the courage to stop carrying what was never mine to begin with."
-      </blockquote>
-      <div class="flex items-center justify-center gap-4 mt-10">
-        <span class="block w-12 h-px bg-gradient-to-r from-transparent to-cosmic-gold/40"></span>
-        <cite class="text-cosmic-gold not-italic text-xs tracking-[0.2em] uppercase font-body">— Ambrosio</cite>
-        <span class="block w-12 h-px bg-gradient-to-l from-transparent to-cosmic-gold/40"></span>
+  <section id="notes-from-the-roof" class="relative py-24 my-16 w-full block overflow-hidden z-10">
+    <div class="max-w-4xl mx-auto px-6 md:px-12">
+      <div class="glass-card rounded-3xl p-10 md:p-16 border border-cosmic-gold/10 bg-slate-950/40 backdrop-blur-md relative shadow-[inset_0_1px_30px_rgba(212,168,67,0.03),0_20px_50px_rgba(0,0,0,0.6)]">
+
+         <!-- Soft gold ambient illumination backdrop orb -->
+         <div class="absolute -top-12 -left-12 w-48 h-48 bg-cosmic-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+         <!-- Awesome Handwritten Script Title Header -->
+         <span class="font-cosmic-script text-3xl sm:text-4xl text-cosmic-gold block text-center mb-4 tracking-wide capitalize drop-shadow-[0_2px_5px_rgba(0,0,0,0.3)]">Notes from the Roof</span>
+
+         <!-- Elegant Large Gold Quotation Mark Anchor -->
+         <div class="text-center font-display text-5xl text-cosmic-gold/20 leading-none h-6 select-none -mt-2 mb-4">&ldquo;</div>
+
+         <!-- High-End Typography Quote Layout -->
+         <blockquote class="font-display text-2xl md:text-3.5xl text-slate-100 leading-relaxed italic text-center max-w-2xl mx-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+           "In my twenties, I thought alignment meant fixing everything that was broken. In my thirties, I realized alignment is simply having the courage to <span class="text-cosmic-gold not-italic font-normal">stop carrying</span> what was never mine to begin with."
+         </blockquote>
+
+         <!-- Decorative golden gradient dividing line -->
+         <div class="w-12 h-[1px] bg-gradient-to-r from-transparent via-cosmic-gold/40 to-transparent mx-auto my-8"></div>
+
+         <!-- Citation Block -->
+         <cite class="text-cosmic-gold not-italic block text-xs tracking-[0.2em] uppercase font-body text-center font-medium">
+           — Ambrosio
+         </cite>
+
       </div>
     </div>
   </section>

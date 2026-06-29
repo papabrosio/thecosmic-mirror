@@ -330,6 +330,12 @@ img {
   }
 }
 
+/* ===== HANDWRITTEN SCRIPT ===== */
+.font-cosmic-script {
+  font-family: 'Alex Brush', cursive;
+  font-weight: 400;
+}
+
 /* ===== REDUCED MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
   .stars-layer-1::before,
