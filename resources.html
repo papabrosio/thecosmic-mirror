@@ -61,7 +61,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/global.css" />
 </head>
-<body class="bg-cosmic-midnight text-cosmic-stardust font-body antialiased relative overflow-x-hidden">
+<body class="bg-cosmic-midnight text-cosmic-stardust font-body antialiased">
+  <div class="fixed inset-0 bg-gradient-to-b from-slate-950/30 via-transparent to-slate-950/20 pointer-events-none z-0" aria-hidden="true"></div>
 
   <!-- ===== COSMIC BACKGROUND LAYERS ===== -->
   <div class="stars-layer-1" aria-hidden="true"></div>
@@ -110,6 +111,27 @@
     </div>
   </section>
 
+  <!-- Resource Filter Shell -->
+  <div class="sticky top-16 z-40 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row gap-3">
+      <input
+        id="resource-search"
+        type="text"
+        placeholder="Search the encyclopedia..."
+        class="flex-1 bg-white/5 border border-white/10 rounded-full px-5 py-2.5 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-cosmic-gold/40 focus:ring-1 focus:ring-cosmic-gold/30"
+      />
+      <select id="resource-filter" class="bg-white/5 border border-white/10 rounded-full px-4 py-2.5 text-sm text-slate-300 focus:outline-none focus:border-cosmic-gold/40">
+        <option value="all">All Categories</option>
+        <option value="type">Aura Types</option>
+        <option value="profile">Profiles</option>
+        <option value="center">Energy Centers</option>
+        <option value="channel">Channels</option>
+        <option value="gate">Gates</option>
+        <option value="cross">Incarnation Crosses</option>
+      </select>
+    </div>
+  </div>
+
   <!-- ============================================================
        SECTION 1 — AURA TYPES (5 Nodes)
        ============================================================ -->
@@ -155,7 +177,7 @@
         </article>
 
         <!-- Manifestor -->
-        <article class="glass-card rounded-2xl p-6">
+        <article class="glass-card resource-card" data-category="type" rounded-2xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider font-medium">Non-Sacral · Impacting</span>
           <h3 class="font-display text-2xl text-white font-bold mt-3 mb-3">Manifestor</h3>
           <p class="text-cosmic-stardust/70 text-sm leading-relaxed mb-4">The only type designed to initiate action independently. Their aura is closed and repelling — they impact the world simply by existing.</p>
@@ -168,7 +190,7 @@
         </article>
 
         <!-- Generator -->
-        <article class="glass-card rounded-2xl p-6">
+        <article class="glass-card resource-card" data-category="type" rounded-2xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider font-medium">Sacral · ~70% of Population</span>
           <h3 class="font-display text-2xl text-white font-bold mt-3 mb-3">Generator</h3>
           <p class="text-cosmic-stardust/70 text-sm leading-relaxed mb-4">The builders and life-force of the world. Their defined sacral center generates sustainable energy. They are here to respond, not initiate.</p>
@@ -181,7 +203,7 @@
         </article>
 
         <!-- Projector -->
-        <article class="glass-card rounded-2xl p-6">
+        <article class="glass-card resource-card" data-category="type" rounded-2xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider font-medium">Non-Sacral · ~20% of Population</span>
           <h3 class="font-display text-2xl text-white font-bold mt-3 mb-3">Projector</h3>
           <p class="text-cosmic-stardust/70 text-sm leading-relaxed mb-4">The guides and directors of the world. Their focused, absorbing aura penetrates the sacral of others. They are here to manage and guide Generator energy — but only when recognized and invited.</p>
@@ -194,7 +216,7 @@
         </article>
 
         <!-- Manifesting Generator -->
-        <article class="glass-card rounded-2xl p-6">
+        <article class="glass-card resource-card" data-category="type" rounded-2xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider font-medium">Sacral · Hybrid</span>
           <h3 class="font-display text-2xl text-white font-bold mt-3 mb-3">Manifesting Generator</h3>
           <p class="text-cosmic-stardust/70 text-sm leading-relaxed mb-4">A hybrid of Manifestor speed and Generator power. They can initiate AND respond. Their energy moves in spiraling, efficient bursts — multi-passionate and designed to skip steps.</p>
@@ -222,7 +244,7 @@
       </div>
 
       <!-- 6/2 Featured Card -->
-      <div class="glass-card rounded-2xl p-8 md:p-10 border-2 border-cosmic-gold/40 mb-10 relative overflow-hidden">
+      <div class="glass-card resource-card" data-category="profile" rounded-2xl p-8 md:p-10 border-2 border-cosmic-gold/40 mb-10 relative overflow-hidden">
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-cosmic-gold/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
         <div class="relative z-10">
           <div class="flex items-center gap-3 mb-5">
@@ -249,17 +271,17 @@
 
       <!-- The Remaining 11 Profiles -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">1/3 — Investigator / Martyr</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">The foundational researcher. Through trial and error (3rd line), they discover what is stable and true (1st line).</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">1/4 — Investigator / Opportunist</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">Deep focus (1st line) combined with a tight, powerful network (4th line). Opportunity flows through others.</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">2/4 — Hermit / Opportunist</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A hermit with natural charisma. Their network is their net worth — but only when they honor their need for solitude.</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">2/5 — Hermit / Heretic</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A hermit whose gifts are projected onto by others (5th line). They must retreat (2nd line) to discover what is truly theirs.</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">3/5 — Martyr / Heretic</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">The universalizer. Through trial (3rd line), they find practical solutions that work for everyone (5th line).</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">3/6 — Martyr / Role Model</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A lifelong trial-and-error process (3rd line) that transitions into becoming a transpersonal authority (6th line).</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">4/6 — Opportunist / Role Model</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">The over-achiever. Their close relationships (4th line) become the foundation for transpersonal wisdom (6th line).</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">4/1 — Opportunist / Investigator</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">Fixed focus through deep study (1st line) combined with a powerful network (4th line).</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">5/1 — Heretic / Investigator</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">The practical visionary. Deep investigation (1st line) produces solutions that seem almost magical (5th line).</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">5/2 — Heretic / Hermit</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A hermit whose gifts are projected onto by others (5th line). They must retreat (2nd line) to discover their truth.</p></article>
-        <article class="glass-card rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">6/3 — Role Model / Martyr</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A role model who learns through constant trial and error (3rd line). Their transpersonal impact (6th line) is forged in fire.</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">1/3 — Investigator / Martyr</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">The foundational researcher. Through trial and error (3rd line), they discover what is stable and true (1st line).</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">1/4 — Investigator / Opportunist</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">Deep focus (1st line) combined with a tight, powerful network (4th line). Opportunity flows through others.</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">2/4 — Hermit / Opportunist</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A hermit with natural charisma. Their network is their net worth — but only when they honor their need for solitude.</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">2/5 — Hermit / Heretic</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A hermit whose gifts are projected onto by others (5th line). They must retreat (2nd line) to discover what is truly theirs.</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">3/5 — Martyr / Heretic</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">The universalizer. Through trial (3rd line), they find practical solutions that work for everyone (5th line).</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">3/6 — Martyr / Role Model</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A lifelong trial-and-error process (3rd line) that transitions into becoming a transpersonal authority (6th line).</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">4/6 — Opportunist / Role Model</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">The over-achiever. Their close relationships (4th line) become the foundation for transpersonal wisdom (6th line).</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">4/1 — Opportunist / Investigator</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">Fixed focus through deep study (1st line) combined with a powerful network (4th line).</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">5/1 — Heretic / Investigator</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">The practical visionary. Deep investigation (1st line) produces solutions that seem almost magical (5th line).</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">5/2 — Heretic / Hermit</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A hermit whose gifts are projected onto by others (5th line). They must retreat (2nd line) to discover their truth.</p></article>
+        <article class="glass-card resource-card" data-category="profile" rounded-xl p-6"><h3 class="font-display text-lg text-white font-bold mb-2">6/3 — Role Model / Martyr</h3><p class="text-cosmic-stardust/60 text-sm leading-relaxed">A role model who learns through constant trial and error (3rd line). Their transpersonal impact (6th line) is forged in fire.</p></article>
       </div>
     </div>
   </section>
@@ -277,7 +299,7 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="center" rounded-xl p-6">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-3 h-3 rounded-full bg-purple-400"></div>
             <h3 class="font-display text-lg text-white font-bold">Head Center (Inspiration)</h3>
@@ -287,7 +309,7 @@
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-cosmic-gold">Undefined:</strong> Open to all kinds of inspiration, absorbing others' questions, no fixed mental pressure</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="center" rounded-xl p-6">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-3 h-3 rounded-full bg-indigo-400"></div>
             <h3 class="font-display text-lg text-white font-bold">Ajna Center (Processing)</h3>
@@ -297,7 +319,7 @@
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-cosmic-gold">Undefined:</strong> Flexible thinking, absorbing others' mental frameworks, learns by listening</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="center" rounded-xl p-6">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-3 h-3 rounded-full bg-blue-400"></div>
             <h3 class="font-display text-lg text-white font-bold">Throat Center (Communication)</h3>
@@ -307,7 +329,7 @@
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-cosmic-gold">Undefined:</strong> Adapts speech to environment, may speak to fill pressure, learns others' communication styles</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="center" rounded-xl p-6">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-3 h-3 rounded-full bg-pink-400"></div>
             <h3 class="font-display text-lg text-white font-bold">G Center (Identity / Love)</h3>
@@ -317,7 +339,7 @@
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-cosmic-gold">Undefined:</strong> Fluid identity, love adapts to whom they're with, direction comes from environment</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="center" rounded-xl p-6">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-3 h-3 rounded-full bg-red-400"></div>
             <h3 class="font-display text-lg text-white font-bold">Heart Center (Ego / Will)</h3>
@@ -327,7 +349,7 @@
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-cosmic-gold">Undefined:</strong> Amplifies others' will, no fixed ego pattern, learns through others' ambition</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="center" rounded-xl p-6">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-3 h-3 rounded-full bg-orange-400"></div>
             <h3 class="font-display text-lg text-white font-bold">Sacral Center (Life Force)</h3>
@@ -337,7 +359,7 @@
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-cosmic-gold">Undefined:</strong> No consistent energy source, borrows others' sacral power, must rest intentionally</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="center" rounded-xl p-6">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
             <h3 class="font-display text-lg text-white font-bold">Solar Plexus (Emotions)</h3>
@@ -347,7 +369,7 @@
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-cosmic-gold">Undefined:</strong> Avoids confrontation, absorbs and amplifies others' emotions, no emotional wave of own</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="center" rounded-xl p-6">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-3 h-3 rounded-full bg-green-400"></div>
             <h3 class="font-display text-lg text-white font-bold">Splenic Center (Intuition)</h3>
@@ -357,7 +379,7 @@
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-cosmic-gold">Undefined:</strong> Adapts to environment's safety, may hold onto things/people for comfort, learns others' fears</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="center" rounded-xl p-6">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-3 h-3 rounded-full bg-amber-500"></div>
             <h3 class="font-display text-lg text-white font-bold">Root Center (Pressure)</h3>
@@ -392,73 +414,73 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Integration</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">53-42 — Maturation</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of growth through completing cycles. Beginnings and endings are sacred — each cycle must be fully lived.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Integration</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">29-46 — Discovery</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of succeeding where others fail. Saying yes to what others abandon — finding treasure in the discarded.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Integration</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">52-9 — Concentration</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of focused stillness. The mountain that does not move — deep concentration that yields profound results.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Individual</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">59-6 — Mating</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of intimacy and procreation. The most powerful biological force — the drive to connect deeply and create life.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Individual</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">43-23 — Structuring</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of the "Genius." Unique insights that come in downloads — the mind that sees the world differently and articulates the new.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Individual</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">38-28 — Struggle</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of "Stubbornness." The drive to find meaning through struggle — when life pushes back, this channel pushes harder toward purpose.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Collective</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">55-35 — Spirit / Change</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of abundance and hunger for experience. Moving from emptiness to fullness through life's changes — the spirit that feeds on novelty.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Collective</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">16-48 — Skills / Depth</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of mastery and enthusiasm. The talent that comes from deep dedication to craft — the gift of depth over breadth.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Collective</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">20-34 — Charisma</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of "The Viewer." Where presence meets sacral power — the expression of being in the now with full force.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Tribal</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">54-32 — Transformation</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of ambition and transformation. The drive to rise from the bottom to the top — the fuel of generational advancement.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Tribal</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">57-10 — Perfected Form</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of survival through right action. Intuitive knowing of how to behave in any situation — the perfected form of being.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="channel" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Tribal</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">44-26 — Surrender</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">The channel of the transmitter. The gut knowing of what will sell — the ability to package and deliver the gift to the tribe.</p>
@@ -483,70 +505,70 @@
       <div class="mb-12">
         <h3 class="font-display text-2xl text-cosmic-gold font-bold mb-6 text-center">Individual Circuit — Mutation & Awareness</h3>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 1</p><p class="text-cosmic-stardust/50 text-xs mt-1">Self-Expression</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 2</p><p class="text-cosmic-stardust/50 text-xs mt-1">Direction</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 3</p><p class="text-cosmic-stardust/50 text-xs mt-1">Ordering</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 4</p><p class="text-cosmic-stardust/50 text-xs mt-1">Formulas</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 5</p><p class="text-cosmic-stardust/50 text-xs mt-1">Patterns</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 6</p><p class="text-cosmic-stardust/50 text-xs mt-1">Friction</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 7</p><p class="text-cosmic-stardust/50 text-xs mt-1">The Army</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 8</p><p class="text-cosmic-stardust/50 text-xs mt-1">Contribution</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 9</p><p class="text-cosmic-stardust/50 text-xs mt-1">Focus</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 10</p><p class="text-cosmic-stardust/50 text-xs mt-1">Treading</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 11</p><p class="text-cosmic-stardust/50 text-xs mt-1">Peace</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 12</p><p class="text-cosmic-stardust/50 text-xs mt-1">Standstill</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 13</p><p class="text-cosmic-stardust/50 text-xs mt-1">Fellowship</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 14</p><p class="text-cosmic-stardust/50 text-xs mt-1">Possession</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 15</p><p class="text-cosmic-stardust/50 text-xs mt-1">Modesty</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 16</p><p class="text-cosmic-stardust/50 text-xs mt-1">Enthusiasm</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 17</p><p class="text-cosmic-stardust/50 text-xs mt-1">Following</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 18</p><p class="text-cosmic-stardust/50 text-xs mt-1">Work on Decayed</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 19</p><p class="text-cosmic-stardust/50 text-xs mt-1">Approach</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 20</p><p class="text-cosmic-stardust/50 text-xs mt-1">Contemplation</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 21</p><p class="text-cosmic-stardust/50 text-xs mt-1">Biting Through</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 22</p><p class="text-cosmic-stardust/50 text-xs mt-1">Grace</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 23</p><p class="text-cosmic-stardust/50 text-xs mt-1">Splitting Apart</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 24</p><p class="text-cosmic-stardust/50 text-xs mt-1">Return</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 25</p><p class="text-cosmic-stardust/50 text-xs mt-1">Innocence</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 26</p><p class="text-cosmic-stardust/50 text-xs mt-1">Taming Power</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 27</p><p class="text-cosmic-stardust/50 text-xs mt-1">Nourishment</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 28</p><p class="text-cosmic-stardust/50 text-xs mt-1">Great Exceeding</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 29</p><p class="text-cosmic-stardust/50 text-xs mt-1">Abysmal</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 30</p><p class="text-cosmic-stardust/50 text-xs mt-1">Clinging Fire</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 31</p><p class="text-cosmic-stardust/50 text-xs mt-1">Influence</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 32</p><p class="text-cosmic-stardust/50 text-xs mt-1">Duration</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 33</p><p class="text-cosmic-stardust/50 text-xs mt-1">Retreat</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 34</p><p class="text-cosmic-stardust/50 text-xs mt-1">Great Power</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 35</p><p class="text-cosmic-stardust/50 text-xs mt-1">Progress</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 36</p><p class="text-cosmic-stardust/50 text-xs mt-1">Darkening</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 37</p><p class="text-cosmic-stardust/50 text-xs mt-1">Family</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 38</p><p class="text-cosmic-stardust/50 text-xs mt-1">Opposition</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 39</p><p class="text-cosmic-stardust/50 text-xs mt-1">Obstruction</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 40</p><p class="text-cosmic-stardust/50 text-xs mt-1">Deliverance</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 41</p><p class="text-cosmic-stardust/50 text-xs mt-1">Decrease</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 42</p><p class="text-cosmic-stardust/50 text-xs mt-1">Increase</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 43</p><p class="text-cosmic-stardust/50 text-xs mt-1">Breakthrough</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 44</p><p class="text-cosmic-stardust/50 text-xs mt-1">Coming to Meet</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 45</p><p class="text-cosmic-stardust/50 text-xs mt-1">Gathering</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 46</p><p class="text-cosmic-stardust/50 text-xs mt-1">Pushing Upward</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 47</p><p class="text-cosmic-stardust/50 text-xs mt-1">Oppression</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 48</p><p class="text-cosmic-stardust/50 text-xs mt-1">The Well</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 49</p><p class="text-cosmic-stardust/50 text-xs mt-1">Revolution</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 50</p><p class="text-cosmic-stardust/50 text-xs mt-1">The Cauldron</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 51</p><p class="text-cosmic-stardust/50 text-xs mt-1">Arousing</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 52</p><p class="text-cosmic-stardust/50 text-xs mt-1">Still Mountain</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 53</p><p class="text-cosmic-stardust/50 text-xs mt-1">Development</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 54</p><p class="text-cosmic-stardust/50 text-xs mt-1">Maiden</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 55</p><p class="text-cosmic-stardust/50 text-xs mt-1">Abundance</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 56</p><p class="text-cosmic-stardust/50 text-xs mt-1">Wanderer</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 57</p><p class="text-cosmic-stardust/50 text-xs mt-1">Penetrating</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 58</p><p class="text-cosmic-stardust/50 text-xs mt-1">Joyous</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 59</p><p class="text-cosmic-stardust/50 text-xs mt-1">Dispersion</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 60</p><p class="text-cosmic-stardust/50 text-xs mt-1">Limitation</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 61</p><p class="text-cosmic-stardust/50 text-xs mt-1">Inner Truth</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 62</p><p class="text-cosmic-stardust/50 text-xs mt-1">Preponderance</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 63</p><p class="text-cosmic-stardust/50 text-xs mt-1">After Completion</p></div>
-          <div class="glass-card rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 64</p><p class="text-cosmic-stardust/50 text-xs mt-1">Before Completion</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 1</p><p class="text-cosmic-stardust/50 text-xs mt-1">Self-Expression</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 2</p><p class="text-cosmic-stardust/50 text-xs mt-1">Direction</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 3</p><p class="text-cosmic-stardust/50 text-xs mt-1">Ordering</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 4</p><p class="text-cosmic-stardust/50 text-xs mt-1">Formulas</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 5</p><p class="text-cosmic-stardust/50 text-xs mt-1">Patterns</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 6</p><p class="text-cosmic-stardust/50 text-xs mt-1">Friction</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 7</p><p class="text-cosmic-stardust/50 text-xs mt-1">The Army</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 8</p><p class="text-cosmic-stardust/50 text-xs mt-1">Contribution</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 9</p><p class="text-cosmic-stardust/50 text-xs mt-1">Focus</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 10</p><p class="text-cosmic-stardust/50 text-xs mt-1">Treading</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 11</p><p class="text-cosmic-stardust/50 text-xs mt-1">Peace</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 12</p><p class="text-cosmic-stardust/50 text-xs mt-1">Standstill</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 13</p><p class="text-cosmic-stardust/50 text-xs mt-1">Fellowship</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 14</p><p class="text-cosmic-stardust/50 text-xs mt-1">Possession</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 15</p><p class="text-cosmic-stardust/50 text-xs mt-1">Modesty</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 16</p><p class="text-cosmic-stardust/50 text-xs mt-1">Enthusiasm</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 17</p><p class="text-cosmic-stardust/50 text-xs mt-1">Following</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 18</p><p class="text-cosmic-stardust/50 text-xs mt-1">Work on Decayed</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 19</p><p class="text-cosmic-stardust/50 text-xs mt-1">Approach</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 20</p><p class="text-cosmic-stardust/50 text-xs mt-1">Contemplation</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 21</p><p class="text-cosmic-stardust/50 text-xs mt-1">Biting Through</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 22</p><p class="text-cosmic-stardust/50 text-xs mt-1">Grace</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 23</p><p class="text-cosmic-stardust/50 text-xs mt-1">Splitting Apart</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 24</p><p class="text-cosmic-stardust/50 text-xs mt-1">Return</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 25</p><p class="text-cosmic-stardust/50 text-xs mt-1">Innocence</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 26</p><p class="text-cosmic-stardust/50 text-xs mt-1">Taming Power</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 27</p><p class="text-cosmic-stardust/50 text-xs mt-1">Nourishment</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 28</p><p class="text-cosmic-stardust/50 text-xs mt-1">Great Exceeding</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 29</p><p class="text-cosmic-stardust/50 text-xs mt-1">Abysmal</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 30</p><p class="text-cosmic-stardust/50 text-xs mt-1">Clinging Fire</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 31</p><p class="text-cosmic-stardust/50 text-xs mt-1">Influence</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 32</p><p class="text-cosmic-stardust/50 text-xs mt-1">Duration</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 33</p><p class="text-cosmic-stardust/50 text-xs mt-1">Retreat</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 34</p><p class="text-cosmic-stardust/50 text-xs mt-1">Great Power</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 35</p><p class="text-cosmic-stardust/50 text-xs mt-1">Progress</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 36</p><p class="text-cosmic-stardust/50 text-xs mt-1">Darkening</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 37</p><p class="text-cosmic-stardust/50 text-xs mt-1">Family</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 38</p><p class="text-cosmic-stardust/50 text-xs mt-1">Opposition</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 39</p><p class="text-cosmic-stardust/50 text-xs mt-1">Obstruction</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 40</p><p class="text-cosmic-stardust/50 text-xs mt-1">Deliverance</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 41</p><p class="text-cosmic-stardust/50 text-xs mt-1">Decrease</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 42</p><p class="text-cosmic-stardust/50 text-xs mt-1">Increase</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 43</p><p class="text-cosmic-stardust/50 text-xs mt-1">Breakthrough</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 44</p><p class="text-cosmic-stardust/50 text-xs mt-1">Coming to Meet</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 45</p><p class="text-cosmic-stardust/50 text-xs mt-1">Gathering</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 46</p><p class="text-cosmic-stardust/50 text-xs mt-1">Pushing Upward</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 47</p><p class="text-cosmic-stardust/50 text-xs mt-1">Oppression</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 48</p><p class="text-cosmic-stardust/50 text-xs mt-1">The Well</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 49</p><p class="text-cosmic-stardust/50 text-xs mt-1">Revolution</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 50</p><p class="text-cosmic-stardust/50 text-xs mt-1">The Cauldron</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 51</p><p class="text-cosmic-stardust/50 text-xs mt-1">Arousing</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 52</p><p class="text-cosmic-stardust/50 text-xs mt-1">Still Mountain</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 53</p><p class="text-cosmic-stardust/50 text-xs mt-1">Development</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 54</p><p class="text-cosmic-stardust/50 text-xs mt-1">Maiden</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 55</p><p class="text-cosmic-stardust/50 text-xs mt-1">Abundance</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 56</p><p class="text-cosmic-stardust/50 text-xs mt-1">Wanderer</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 57</p><p class="text-cosmic-stardust/50 text-xs mt-1">Penetrating</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 58</p><p class="text-cosmic-stardust/50 text-xs mt-1">Joyous</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 59</p><p class="text-cosmic-stardust/50 text-xs mt-1">Dispersion</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 60</p><p class="text-cosmic-stardust/50 text-xs mt-1">Limitation</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 61</p><p class="text-cosmic-stardust/50 text-xs mt-1">Inner Truth</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 62</p><p class="text-cosmic-stardust/50 text-xs mt-1">Preponderance</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 63</p><p class="text-cosmic-stardust/50 text-xs mt-1">After Completion</p></div>
+          <div class="glass-card resource-card" data-category="gate" rounded-lg p-4 text-center"><p class="text-cosmic-gold font-display font-bold">Gate 64</p><p class="text-cosmic-stardust/50 text-xs mt-1">Before Completion</p></div>
         </div>
       </div>
 
@@ -566,15 +588,15 @@
 
       <!-- Cross Type Explanations -->
       <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <div class="glass-card rounded-xl p-6 border-l-4 border-cosmic-gold">
+        <div class="glass-card resource-card" data-category="cross" rounded-xl p-6 border-l-4 border-cosmic-gold">
           <h3 class="font-display text-lg text-cosmic-gold font-bold mb-2">Right Angle Crosses</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-white">Personal Destiny.</strong> Your life theme is driven by your own personal karma. You are here to fulfill your individual purpose, largely independent of others.</p>
         </div>
-        <div class="glass-card rounded-xl p-6 border-l-4 border-cosmic-violet">
+        <div class="glass-card resource-card" data-category="cross" rounded-xl p-6 border-l-4 border-cosmic-violet">
           <h3 class="font-display text-lg text-cosmic-gold font-bold mb-2">Juxtaposition Crosses</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-white">Fixed Fate.</strong> A rare cross where your destiny is fixed and aligned with a specific life theme. You are here to live out a predetermined cosmic role.</p>
         </div>
-        <div class="glass-card rounded-xl p-6 border-l-4 border-cosmic-amethyst">
+        <div class="glass-card resource-card" data-category="cross" rounded-xl p-6 border-l-4 border-cosmic-amethyst">
           <h3 class="font-display text-lg text-cosmic-gold font-bold mb-2">Left Angle Crosses</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed"><strong class="text-white">Interpersonal Destiny.</strong> Your life theme is transpersonal — your fate is tied to others. You are here to fulfill your purpose through relationships and community.</p>
         </div>
@@ -583,73 +605,73 @@
       <!-- Cross Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Right Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of the Alpha</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 31 / 7 / 15 / 33 — The leader of the pack. Natural authority that guides others through influence and direction.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Right Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of Obscuration</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 62 / 61 / 4 / 6 — Brilliant strategic moves executed without giving the game away. The hidden genius.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Right Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of the Rebel</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 4 / 63 / 7 / 31 — Expanding possibilities through iconoclastic thinking and challenging the status quo.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Right Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of Charades</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 7 / 31 / 15 / 33 — Clever innovation that doesn't reveal its full hand. Leadership through mystery.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Right Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of Distraction</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 56 / 18 / 56 / 18 — The potential to see the bigger picture through constant movement and stimulation.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Right Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of Planning</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 27 / 24 / 8 / 32 — Caring for others through strategic foresight and resource management.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Left Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of the Return</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 24 / 61 / 24 / 61 — The natural rhythm of withdrawing to the sacred and returning with wisdom.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Left Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of Contemplation</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 20 / 34 / 20 / 34 — The power of being fully in the now, seeing and understanding without words.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Left Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of Individuality</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 23 / 43 / 23 / 43 — Unique insights that break apart the old paradigm to make way for the new.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Left Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of Direction</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 2 / 1 / 2 / 1 — Surrendering to the flow and trusting the path that reveals itself.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Left Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of Contribution</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 8 / 32 / 27 / 24 — Contributing your unique gift to the collective through sustained effort.</p>
         </article>
 
-        <article class="glass-card rounded-xl p-6">
+        <article class="glass-card resource-card" data-category="cross" rounded-xl p-6">
           <span class="text-cosmic-gold text-xs uppercase tracking-wider">Left Angle</span>
           <h3 class="font-display text-lg text-white font-bold mt-2 mb-2">Cross of the Sleeping Phoenix</h3>
           <p class="text-cosmic-stardust/60 text-sm leading-relaxed">Gate 55 / 35 / 55 / 35 — Abundance that comes through embracing the full spectrum of experience.</p>
@@ -706,5 +728,27 @@
   </footer>
 
   <script src="js/nav.js"></script>
+  <script>
+    (function () {
+      const search = document.getElementById('resource-search');
+      const filter = document.getElementById('resource-filter');
+      const cards = document.querySelectorAll('.resource-card');
+      if (!search || !filter || !cards.length) return;
+
+      function update() {
+        const term = search.value.trim().toLowerCase();
+        const cat = filter.value;
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          const matchesTerm = term === '' || text.includes(term);
+          const matchesCat = cat === 'all' || card.dataset.category === cat;
+          card.style.display = (matchesTerm && matchesCat) ? '' : 'none';
+        });
+      }
+
+      search.addEventListener('input', update);
+      filter.addEventListener('change', update);
+    })();
+  </script>
 </body>
 </html>
