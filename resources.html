@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Encyclopedia | The Cosmic Mirror</title>
-  <meta name="description" content="The Cosmic Mirror Encyclopedia — organized Human Design reference. Browse Gates, Channels, Aura Types, Profiles, Energy Centers, and Incarnation Crosses.">
+  <meta name="description" content="The Complete Human Design System — browse Gates, Channels, Aura Types, Profiles, Energy Centers, Incarnation Crosses, and Rave I'Ching.">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,58 +32,156 @@
     </div>
   </nav>
 
-  <section class="relative pt-32 pb-16 overflow-hidden">
+  <section class="relative pt-32 pb-10 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-cosmic-nebula via-cosmic-deep to-cosmic-midnight"></div>
     <div class="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-cosmic-gold/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 right-[10%] w-[380px] h-[380px] encyclopedia-hero-orb rounded-full"></div>
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
       <p class="text-cosmic-gold uppercase tracking-[0.3em] text-sm mb-6 font-medium">Encyclopedia</p>
       <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">The Complete Human Design System</h1>
       <p class="text-xl text-cosmic-mist max-w-3xl mx-auto leading-relaxed">
-        Organized by category. Start with a quick directory, then follow into the full guide when you’re ready.
+        Search the system, then follow the thread that calls to you.
       </p>
     </div>
   </section>
 
-  <section class="py-16 relative z-10">
+  <section class="py-6 relative z-10">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="glass-card rounded-2xl p-6 md:p-10 border border-white/10">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+          <div class="flex-1">
+            <label for="encyclopedia-search" class="block text-xs text-cosmic-gold uppercase tracking-widest mb-2">Search the encyclopedia</label>
+            <input
+              id="encyclopedia-search"
+              type="text"
+              placeholder="Try: Gates, Sacral, Projector, 6/2, Rave I'Ching..."
+              class="encyclopedia-search w-full rounded-xl border border-white/10 text-slate-100 placeholder:text-slate-400 px-5 py-4 text-lg"
+            />
+          </div>
+          <div class="md:w-64">
+            <label for="encyclopedia-filter" class="block text-xs text-cosmic-gold uppercase tracking-widest mb-2">Filter</label>
+            <select id="encyclopedia-filter" class="encyclopedia-search w-full rounded-xl border border-white/10 text-slate-100 px-5 py-4 text-base">
+              <option value="all">All categories</option>
+              <option value="Gates">Gates</option>
+              <option value="Channels">Channels</option>
+              <option value="Aura Types">Aura Types</option>
+              <option value="Profiles">Profiles</option>
+              <option value="Energy Centers">Energy Centers</option>
+              <option value="Incarnation Crosses">Incarnation Crosses</option>
+              <option value="Rave I'Ching">Rave I'Ching</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-2" id="filter-chips">
+          <button class="filter-chip active rounded-full border border-white/10 px-5 py-2 text-sm text-slate-200" data-filter="all">All</button>
+          <button class="filter-chip rounded-full border border-white/10 px-5 py-2 text-sm text-slate-200" data-filter="Gates">Gates</button>
+          <button class="filter-chip rounded-full border border-white/10 px-5 py-2 text-sm text-slate-200" data-filter="Channels">Channels</button>
+          <button class="filter-chip rounded-full border border-white/10 px-5 py-2 text-sm text-slate-200" data-filter="Aura Types">Aura Types</button>
+          <button class="filter-chip rounded-full border border-white/10 px-5 py-2 text-sm text-slate-200" data-filter="Profiles">Profiles</button>
+          <button class="filter-chip rounded-full border border-white/10 px-5 py-2 text-sm text-slate-200" data-filter="Energy Centers">Energy Centers</button>
+          <button class="filter-chip rounded-full border border-white/10 px-5 py-2 text-sm text-slate-200" data-filter="Incarnation Crosses">Incarnation Crosses</button>
+          <button class="filter-chip rounded-full border border-white/10 px-5 py-2 text-sm text-slate-200" data-filter="Rave I'Ching">Rave I'Ching</button>
+        </div>
+
+        <div class="mt-4 text-sm text-slate-300" id="results-count"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 relative z-10">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        <a href="gates.html" class="glass-card-gold rounded-2xl p-8 border border-white/5 text-left hover:border-cosmic-gold/40 transition-colors group">
-          <p class="text-xs text-cosmic-gold font-mono uppercase tracking-wider mb-3">64 Entries</p>
-          <h2 class="font-display text-2xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Gates</h2>
+      <div id="encyclopedia-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="gates.html" data-category="Gates" class="encyclopedia-card glass-card-gold reveal rounded-2xl p-8 border border-white/5 text-left group">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <span class="encyclopedia-badge rounded-full px-4 py-1 text-xs font-medium">64 Entries</span>
+            <span class="text-cosmic-gold/80 text-sm">Start here</span>
+          </div>
+          <h2 class="font-display text-3xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Gates</h2>
           <p class="text-slate-300 text-sm leading-relaxed">The basic components of the Human Design system. Each Gate has a complete guide with 6 lines, Type breakdowns, shadow, gift, and daily practice.</p>
+          <div class="mt-5 flex items-center gap-2 text-cosmic-gold text-sm font-medium">
+            <span>Open directory</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
         </a>
 
-        <a href="channels.html" class="glass-card-gold rounded-2xl p-8 border border-white/5 text-left hover:border-cosmic-gold/40 transition-colors group">
-          <p class="text-xs text-cosmic-gold font-mono uppercase tracking-wider mb-3">36 Channels</p>
-          <h2 class="font-display text-2xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Channels</h2>
-          <p class="text-slate-300 text-sm leading-relaxed">The wiring between Centers. Channels describe consistent, reliable themes in your behavior and experience.</p>
+        <a href="channels.html" data-category="Channels" class="encyclopedia-card glass-card-gold reveal rounded-2xl p-8 border border-white/5 text-left group">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <span class="encyclopedia-badge rounded-full px-4 py-1 text-xs font-medium">36 Channels</span>
+            <span class="text-cosmic-gold/80 text-sm">Wiring</span>
+          </div>
+          <h2 class="font-display text-3xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Channels</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">Channels connect Centers and create reliable streams of energy. They describe consistent behavioral themes in your chart.</p>
+          <div class="mt-5 flex items-center gap-2 text-cosmic-gold text-sm font-medium">
+            <span>Explore channels</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
         </a>
 
-        <a href="aura-types.html" class="glass-card-gold rounded-2xl p-8 border border-white/5 text-left hover:border-cosmic-gold/40 transition-colors group">
-          <p class="text-xs text-cosmic-gold font-mono uppercase tracking-wider mb-3">5 Types</p>
-          <h2 class="font-display text-2xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Aura Types</h2>
-          <p class="text-slate-300 text-sm leading-relaxed">Reflector, Projector, Manifestor, Generator, and Manifesting Generator. Each has a distinct aura, strategy, and authority.</p>
+        <a href="aura-types.html" data-category="Aura Types" class="encyclopedia-card glass-card-gold reveal rounded-2xl p-8 border border-white/5 text-left group">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <span class="encyclopedia-badge rounded-full px-4 py-1 text-xs font-medium">5 Types</span>
+            <span class="text-cosmic-gold/80 text-sm">Aura</span>
+          </div>
+          <h2 class="font-display text-3xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Aura Types</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">Reflector, Projector, Manifestor, Generator, and Manifesting Generator. Each type projects a distinct aura, strategy, and authority.</p>
+          <div class="mt-5 flex items-center gap-2 text-cosmic-gold text-sm font-medium">
+            <span>Read about types</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
         </a>
 
-        <a href="profiles.html" class="glass-card-gold rounded-2xl p-8 border border-white/5 text-left hover:border-cosmic-gold/40 transition-colors group">
-          <p class="text-xs text-cosmic-gold font-mono uppercase tracking-wider mb-3">12 Profiles</p>
-          <h2 class="font-display text-2xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Profiles</h2>
-          <p class="text-slate-300 text-sm leading-relaxed">The 6/2, 4/6, 1/3, and other profile combinations describe the roles we play and the life arc we walk.</p>
+        <a href="profiles.html" data-category="Profiles" class="encyclopedia-card glass-card-gold reveal rounded-2xl p-8 border border-white/5 text-left group">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <span class="encyclopedia-badge rounded-full px-4 py-1 text-xs font-medium">12 Profiles</span>
+            <span class="text-cosmic-gold/80 text-sm">Roles</span>
+          </div>
+          <h2 class="font-display text-3xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Profiles</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">The 6/2, 4/6, 1/3, and other profile combinations describe the roles we play and the life arc we walk through relationship.</p>
+          <div class="mt-5 flex items-center gap-2 text-cosmic-gold text-sm font-medium">
+            <span>Explore profiles</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
         </a>
 
-        <a href="energy-centers.html" class="glass-card-gold rounded-2xl p-8 border border-white/5 text-left hover:border-cosmic-gold/40 transition-colors group">
-          <p class="text-xs text-cosmic-gold font-mono uppercase tracking-wider mb-3">9 Centers</p>
-          <h2 class="font-display text-2xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Energy Centers</h2>
+        <a href="energy-centers.html" data-category="Energy Centers" class="encyclopedia-card glass-card-gold reveal rounded-2xl p-8 border border-white/5 text-left group">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <span class="encyclopedia-badge rounded-full px-4 py-1 text-xs font-medium">9 Centers</span>
+            <span class="text-cosmic-gold/80 text-sm">Awareness</span>
+          </div>
+          <h2 class="font-display text-3xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Energy Centers</h2>
           <p class="text-slate-300 text-sm leading-relaxed">Head, Ajna, Throat, G, Heart, Solar Plexus, Spleen, Sacral, and Root. Defined or open, each center speaks.</p>
+          <div class="mt-5 flex items-center gap-2 text-cosmic-gold text-sm font-medium">
+            <span>Study the centers</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
         </a>
 
-        <a href="incarnation-crosses.html" class="glass-card-gold rounded-2xl p-8 border border-white/5 text-left hover:border-cosmic-gold/40 transition-colors group">
-          <p class="text-xs text-cosmic-gold font-mono uppercase tracking-wider mb-3">12 Incarnation Crosses</p>
-          <h2 class="font-display text-2xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Incarnation Crosses</h2>
-          <p class="text-slate-300 text-sm leading-relaxed">The cross you were born under. It is the larger theme your life is here to live and demonstrate.</p>
+        <a href="incarnation-crosses.html" data-category="Incarnation Crosses" class="encyclopedia-card glass-card-gold reveal rounded-2xl p-8 border border-white/5 text-left group">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <span class="encyclopedia-badge rounded-full px-4 py-1 text-xs font-medium">12 Incarnation Crosses</span>
+            <span class="text-cosmic-gold/80 text-sm">Theme</span>
+          </div>
+          <h2 class="font-display text-3xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Incarnation Crosses</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">The cross you were born under. It is the larger theme your life is here to live and demonstrate through correct strategy.</p>
+          <div class="mt-5 flex items-center gap-2 text-cosmic-gold text-sm font-medium">
+            <span>See your cross</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
         </a>
 
+        <a href="rave-iching.html" data-category="Rave I'Ching" class="encyclopedia-card glass-card-gold reveal rounded-2xl p-8 border border-white/5 text-left group">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <span class="encyclopedia-badge rounded-full px-4 py-1 text-xs font-medium">Source Text</span>
+            <span class="text-cosmic-gold/80 text-sm">Archetypes</span>
+          </div>
+          <h2 class="font-display text-3xl text-white font-medium mb-2 group-hover:text-cosmic-gold transition-colors">Rave I'Ching</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">The foundational map of 64 archetypal states. Read through the BodyGraph and understand how each gate expresses through line frequency.</p>
+          <div class="mt-5 flex items-center gap-2 text-cosmic-gold text-sm font-medium">
+            <span>Enter the I'Ching</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -98,11 +196,55 @@
         <a href="index.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Home</a>
         <a href="about.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">About</a>
         <a href="services.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Services</a>
-        <a href="gates.html" class="text-cosmic-gold transition-colors text-sm">Gates</a>
-        <a href="channels.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Channels</a>
+        <a href="resources.html" class="text-cosmic-gold transition-colors text-sm">Resources</a>
       </nav>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      const grid = document.getElementById('encyclopedia-grid');
+      const searchInput = document.getElementById('encyclopedia-search');
+      const filterSelect = document.getElementById('encyclopedia-filter');
+      const filterChips = document.querySelectorAll('.filter-chip');
+      const resultsCount = document.getElementById('results-count');
+
+      const cards = Array.from(grid.querySelectorAll('[data-category]'));
+
+      const countText = () => {
+        const visible = cards.filter(card => card.hidden === false).length;
+        resultsCount.textContent = 'Showing ' + visible + ' of ' + cards.length + ' entries';
+      };
+
+      const applyFilters = () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const category = filterSelect.value;
+
+        cards.forEach(card => {
+          const matchCategory = category === 'all' || card.dataset.category === category;
+          const matchSearch = !query || card.textContent.toLowerCase().includes(query);
+          card.hidden = !(matchCategory && matchSearch);
+        });
+
+        filterChips.forEach(chip => {
+          chip.classList.toggle('active', chip.dataset.filter === category);
+        });
+
+        countText();
+      };
+
+      searchInput.addEventListener('input', applyFilters);
+      filterSelect.addEventListener('change', applyFilters);
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          filterSelect.value = chip.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      countText();
+    })();
+  </script>
 
   <script src="js/nav.js"></script>
 </body>
