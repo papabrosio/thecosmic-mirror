@@ -22,7 +22,6 @@
   <div class="nebula-orb nebula-orb-2" aria-hidden="true"></div>
   <div class="nebula-orb nebula-orb-3" aria-hidden="true"></div>
 
-  <!-- Navigation -->
   <nav class="w-full fixed top-0 left-0 bg-slate-950/85 backdrop-blur-md border-b border-white/5 z-50 py-2 px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-3 items-center py-4 px-6">
       <div class="flex justify-start">
@@ -48,12 +47,12 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="relative pt-32 pb-12 overflow-hidden">
+  <section class="relative pt-32 pb-20 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-cosmic-nebula via-cosmic-deep to-cosmic-midnight"></div>
     <div class="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-cosmic-gold/10 rounded-full blur-3xl"></div>
     <div class="absolute top-1/3 right-[10%] w-[380px] h-[380px] encyclopedia-hero-orb rounded-full"></div>
-    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
       <p class="text-cosmic-gold uppercase tracking-[0.3em] text-sm mb-6 font-medium">Encyclopedia</p>
       <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">
         <span class="font-cosmic-script text-cosmic-gold drop-shadow-[0_2px_8px_rgba(212,168,67,0.35)]">The</span>
@@ -68,21 +67,33 @@
     </div>
   </section>
 
-  <!-- Start Here -->
   <section class="py-10 relative z-10">
     <div class="max-w-5xl mx-auto px-6">
-      <div class="glass-card rounded-2xl p-8 md:p-12 border border-white/10 text-center md:text-left">
-        <span class="text-xs text-cosmic-gold uppercase tracking-widest mb-2 block">Start Here</span>
-        <h2 class="font-display text-3xl md:text-4xl text-white font-medium mb-3">A first orientation, not a textbook.</h2>
-        <p class="text-slate-300 leading-relaxed max-w-3xl">
-          Human Design is most useful when you enter through your own curiosity. If you are new, begin with your <a href="aura-types.html" class="text-cosmic-gold underline underline-offset-4 decoration-white/20 hover:decoration-cosmic-gold transition-colors">Aura Type</a> or your <a href="profiles.html" class="text-cosmic-gold underline underline-offset-4 decoration-white/20 hover:decoration-cosmic-gold transition-colors">Profile</a>. From there, use the encyclopedia like a map: follow one gate, one channel, or one center until something clicks.
-        </p>
+      <div class="glass-card rounded-2xl p-8 md:p-12 border border-white/10">
+        <div class="flex flex-col md:flex-row gap-6 md:gap-10">
+          <div class="md:w-1/2">
+            <span class="text-xs text-cosmic-gold uppercase tracking-widest mb-2 block">Start Here</span>
+            <h2 class="font-display text-3xl md:text-4xl text-white font-medium mb-3">A first orientation, not a textbook.</h2>
+            <p class="text-slate-300 leading-relaxed">
+              Human Design is most useful when you enter through your own curiosity. If you are new, begin with your <a href="aura-types.html" class="text-cosmic-gold underline underline-offset-4 decoration-white/20 hover:decoration-cosmic-gold transition-colors">Aura Type</a> or your <a href="profiles.html" class="text-cosmic-gold underline underline-offset-4 decoration-white/20 hover:decoration-cosmic-gold transition-colors">Profile</a>. From there, use the encyclopedia like a map: follow one gate, one channel, or one center until something clicks.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <span class="text-xs text-cosmic-gold uppercase tracking-widest mb-2 block">How to use this</span>
+            <ul class="space-y-3 text-slate-300 text-sm leading-relaxed">
+              <li>1. Pick one category that feels personal.</li>
+              <li>2. Read the entry in full, not just the summary.</li>
+              <li>3. Notice where it matches your experience.</li>
+              <li>4. Bring one question into your evaluation.</li>
+            </ul>
+            <p class="mt-3 text-slate-400 text-xs">This encyclopedia is a mirror, not a rulebook. Let it reflect back what you already recognize.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Search + Filter -->
-  <section class="py-6 relative z-10">
+  <section class="py-8 relative z-10">
     <div class="max-w-5xl mx-auto px-6">
       <div class="glass-card rounded-2xl p-6 md:p-10 border border-white/10">
         <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
@@ -126,10 +137,9 @@
     </div>
   </section>
 
-  <!-- Category Grid -->
-  <section class="py-10 relative z-10">
+  <section class="py-12 relative z-10">
     <div class="max-w-6xl mx-auto px-6">
-      <div id="encyclopedia-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <a href="gates.html" data-category="Gates" class="encyclopedia-card glass-card-gold reveal rounded-2xl p-8 border border-white/5 text-left group">
           <div class="flex items-start justify-between gap-4 mb-3">
             <span class="encyclopedia-badge rounded-full px-4 py-1 text-xs font-medium">64 Entries</span>
@@ -224,7 +234,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="py-12 relative z-10 border-t border-cosmic-violet/30">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="text-center md:text-left">
@@ -259,7 +268,7 @@
 
       const countText = () => {
         const visible = cards.filter(card => card.hidden === false).length;
-        resultsCount.textContent = 'Showing ' + visible + ' of ' + cards.length + ' entries';
+        resultsCount.textContent = 'Showing ' + visible + ' of ' + cards.length + ' entr' + (visible === 1 ? 'y' : 'ies');
       };
 
       const applyFilters = () => {
