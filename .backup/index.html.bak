@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cosmic Mirror | Reflector 1:1 Human Design Evaluations</title>
+  <meta name="description" content="The Cosmic Mirror offers deeply personal Human Design 1:1 readings with Ambrosio, a 6/2 Reflector with Lunar Authority. A 28-day lunar alignment process for real clarity." />
+  <meta name="keywords" content="Human Design, Reflector reading, 6/2 profile, Lunar Authority, Human Design consultation, Human Design 1:1 evaluation, cosmic alignment, Ambrosio" />
+  <meta name="author" content="Ambrosio — The Cosmic Mirror" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://thecosmicmirror.vercel.app/" />
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The Cosmic Mirror",
+    "url": "https://thecosmicmirror.vercel.app",
+    "description": "Human Design 1:1 chart evaluations by Ambrosio, a 6/2 Reflector with Lunar Authority.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Cosmic Mirror",
+      "url": "https://thecosmicmirror.vercel.app"
+    },
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://calendly.com/papabrosio360/cosmic-mirror-evaluation",
+        "inLanguage": "en-US"
+      },
+      "bookingType": "https://schema.org/Reservation"
+    }
+  }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Cosmic Mirror | Reflector 1:1 Human Design Evaluations" />
+  <meta property="og:description" content="Human Design 1:1 chart evaluations by Ambrosio. A 28-day lunar alignment process for real clarity." />
+  <meta property="og:url" content="https://thecosmicmirror.vercel.app" />
+  <meta property="og:site_name" content="The Cosmic Mirror" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Cosmic Mirror | Reflector 1:1 Human Design Evaluations" />
+  <meta name="twitter:description" content="Human Design 1:1 chart evaluations by Ambrosio. A 28-day lunar alignment process for real clarity." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cosmic: {
+              midnight: '#0a0a2e',
+              deep: '#12123e',
+              nebula: '#1a1050',
+              violet: '#2d1b69',
+              amethyst: '#4a1e8a',
+              glow: '#7c3aed',
+              gold: '#d4a843',
+              goldlight: '#f0d78c',
+              stardust: '#e8e0f0',
+              mist: '#c4b5fd',
+            }
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+            'twinkle': 'twinkle 4s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(212,168,67,0.3)' },
+              '100%': { boxShadow: '0 0 40px rgba(212,168,67,0.6)' },
+            },
+            twinkle: {
+              '0%, 100%': { opacity: '0.3' },
+              '50%': { opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="css/global.css" />
+</head>
+<body class="bg-cosmic-midnight text-cosmic-stardust font-body antialiased">
+  <div class="fixed inset-0 bg-gradient-to-b from-slate-950/30 via-transparent to-slate-950/20 pointer-events-none z-0" aria-hidden="true"></div>
+
+  <!-- ===== UX ELEVATION: READABILITY OVERLAY ===== -->
+  <nav class="w-full fixed top-0 left-0 bg-slate-950/85 backdrop-blur-md border-b border-white/5 z-50 py-2 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-3 items-center py-4 px-6">
+
+      <!-- Left Column: Empty structural spacer to maintain perfect symmetry -->
+      <div class="flex justify-start"></div>
+
+      <!-- Center Column: Horizontal Moon Phases stretching beautifully across the center -->
+      <div class="flex justify-center w-full col-span-1">
+        <a href="index.html" class="block w-full max-w-[200px] sm:max-w-[260px] md:max-w-[320px] focus:outline-none transition-transform duration-300 hover:scale-[1.02]">
+          <img src="assets/images/lunar-phases-header.png" alt="The Cosmic Mirror" class="w-full h-auto object-contain block mx-auto">
+        </a>
+      </div>
+
+      <!-- Right Column: Clean 3-Line Sandwich Hamburger Menu Button -->
+      <div class="flex justify-end">
+        <button id="menu-toggle" class="flex flex-col justify-between w-6 h-4 focus:outline-none group z-50" aria-label="Toggle Menu">
+          <span class="w-full h-[2px] bg-cosmic-gold rounded transition-all duration-300 origin-left"></span>
+          <span class="w-full h-[2px] bg-cosmic-gold rounded transition-all duration-300"></span>
+          <span class="w-full h-[2px] bg-cosmic-gold rounded transition-all duration-300 origin-left"></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <!-- Background cosmic effects -->
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-20 left-10 w-1 h-1 bg-white rounded-full animate-twinkle"></div>
+      <div class="absolute top-40 right-20 w-1.5 h-1.5 bg-cosmic-gold rounded-full animate-twinkle" style="animation-delay: 1s;"></div>
+      <div class="absolute top-60 left-1/4 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 2s;"></div>
+      <div class="absolute bottom-40 right-1/3 w-1 h-1 bg-cosmic-mist rounded-full animate-twinkle" style="animation-delay: 0.5s;"></div>
+      <div class="absolute top-32 left-1/2 w-0.5 h-0.5 bg-white rounded-full animate-twinkle" style="animation-delay: 3s;"></div>
+      <div class="absolute bottom-60 left-16 w-1 h-1 bg-cosmic-gold rounded-full animate-twinkle" style="animation-delay: 1.5s;"></div>
+      <div class="absolute top-80 right-10 w-0.5 h-0.5 bg-white rounded-full animate-twinkle" style="animation-delay: 2.5s;"></div>
+    </div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cosmic-amethyst/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cosmic-violet/15 rounded-full blur-3xl"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <!-- ══════════════════════════════════════════════════════
+           INTRODUCTION — Portrait & Copy (Isolated Section)
+           ══════════════════════════════════════════════════════ -->
+      <section id="introduction" class="relative pt-24 pb-16 z-10 w-full block">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center max-w-7xl mx-auto px-6 w-full">
+
+          <!-- LEFT COLUMN — Branding Portrait (md:col-span-5) -->
+          <div class="md:col-span-5 w-full flex justify-center">
+            <div class="glass-card rounded-2xl p-3 border border-cosmic-gold/20 relative w-full max-w-[380px] overflow-hidden bg-slate-950/50 shadow-2xl">
+              <img src="assets/images/ambrosio-portrait.png" alt="Ambrosio" class="w-full h-auto object-contain rounded-xl grayscale-[15%] contrast-[1.05]">
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN — Personal 6/2 Narrative (md:col-span-7) -->
+          <div class="md:col-span-7 w-full flex flex-col justify-start text-left pt-2">
+          <!-- Category Tag -->
+
+
+          <!-- Core Evolutionary Headline -->
+          <span class="text-xs uppercase font-light tracking-[0.3em] text-cosmic-gold block mb-3">The Embodied Mirror</span>
+          <h1 class="font-display text-4xl md:text-5xl text-white font-medium leading-tight mb-6">
+            I spent thirty years experimenting with the noise of the world—<span class="italic text-cosmic-gold font-normal">so I could look down from the roof and show you who you are.</span>
+          </h1>
+
+          <!-- The Grounded Personal Journey Copy -->
+          <p class="font-body text-base text-slate-300 leading-relaxed mb-6">
+            My first three decades were trial and error — throwing myself into every situation, picking up the emotional residue of everyone around me. I couldn’t tell what was mine and what was theirs. All of it landed as a deep, quiet disappointment.
+          </p>
+
+          <p class="font-body text-base text-slate-300 leading-relaxed mb-6">
+            Around thirty-five, something shifted. I stopped running. From this place of stillness, I can see you clearly. No filters, no scripts—just pure attention.
+          </p>
+
+          <p class="font-body text-base text-slate-300 leading-relaxed mb-8">
+            I built <em class="text-white not-italic font-medium">The Cosmic Mirror</em> because I know that ache of living someone else’s life. My work is patient. I don’t tell you what to do—I reflect back what’s already alive within you.
+          </p>
+
+          <!-- Nested CTA Buttons Container -->
+          <div class="flex flex-col sm:flex-row gap-4 items-start justify-start w-full">
+            <a href="https://calendly.com/papabrosio360/cosmic-mirror-evaluation" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-full bg-cosmic-gold text-slate-950 font-medium tracking-wide shadow-[0_0_20px_rgba(212,168,67,0.2)] hover:shadow-[0_0_30px_rgba(212,168,67,0.35)] transition-all duration-300 w-full sm:w-auto text-center active:scale-[0.98]">
+              Book an Evaluation
+            </a>
+            <a href="about.html" class="px-8 py-4 rounded-full border border-white/20 text-white font-medium tracking-wide hover:bg-white/5 transition-all duration-300 w-full sm:w-auto text-center">
+              Read My Full Journey
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <!-- END Introduction Grid -->
+      </section>
+    </div>
+
+  </section>
+
+  <!-- Lead Magnet Hook -->
+  <section class="py-14 relative z-10">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="glass-card rounded-2xl border border-white/10 p-8 md:p-12">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <span class="text-xs uppercase tracking-widest text-cosmic-gold block mb-2 font-mono">Free Starter</span>
+            <h3 class="font-display text-3xl text-white font-medium mb-3">Reflector Mini-Reading</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">A short, grounded orientation to your Type, Strategy, and Authority. No hype, no long wait—just enough to see whether this system actually fits.</p>
+            <p class="text-slate-400 text-xs">By signing up you agree to receive email updates. No spam; unsubscribe anytime.</p>
+          </div>
+          <form class="space-y-3" onsubmit="event.preventDefault(); alert('Lead capture placeholder');">
+            <input type="text" placeholder="Your name" class="encyclopedia-search w-full rounded-xl border border-white/10 text-slate-100 placeholder:text-slate-400 px-5 py-4 text-base" />
+            <input type="email" placeholder="Your email" class="encyclopedia-search w-full rounded-xl border border-white/10 text-slate-100 placeholder:text-slate-400 px-5 py-4 text-base" required />
+            <button type="submit" class="w-full px-6 py-4 rounded-full bg-cosmic-gold text-slate-950 font-medium text-sm tracking-wide shadow-[0_0_20px_rgba(212,168,67,0.2)] hover:shadow-[0_0_30px_rgba(212,168,67,0.35)] transition-all duration-300 active:scale-[0.98]">Get the Free Starter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notes from the Roof -->
+  <section id="notes-from-the-roof" class="relative py-24 my-16 w-full block overflow-hidden z-10">
+    <div class="max-w-4xl mx-auto px-6 md:px-12">
+      <div class="glass-card rounded-3xl p-10 md:p-16 border border-cosmic-gold/10 bg-slate-950/40 backdrop-blur-md relative shadow-[inset_0_1px_30px_rgba(212,168,67,0.03),0_20px_50px_rgba(0,0,0,0.6)]">
+
+         <!-- Soft gold ambient illumination backdrop orb -->
+         <div class="absolute -top-12 -left-12 w-48 h-48 bg-cosmic-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+         <!-- Awesome Handwritten Script Title Header -->
+         <span class="font-cosmic-script text-3xl sm:text-4xl text-cosmic-gold block text-center mb-4 tracking-wide drop-shadow-[0_2px_5px_rgba(0,0,0,0.3)]">Notes from the Roof</span>
+
+         <!-- Elegant Large Gold Quotation Mark Anchor -->
+         <div class="text-center font-display text-5xl text-cosmic-gold/20 leading-none h-6 select-none -mt-2 mb-4">&ldquo;</div>
+
+         <!-- High-End Typography Quote Layout -->
+         <blockquote class="font-display text-2xl md:text-3.5xl text-slate-100 leading-relaxed italic text-center max-w-2xl mx-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+           "In my twenties, I thought alignment meant fixing everything that was broken. In my thirties, I realized alignment is simply having the courage to <span class="text-cosmic-gold not-italic font-normal">stop carrying</span> what was never mine to begin with."
+         </blockquote>
+
+         <!-- Decorative golden gradient dividing line -->
+         <div class="w-12 h-[1px] bg-gradient-to-r from-transparent via-cosmic-gold/40 to-transparent mx-auto my-8"></div>
+
+         <!-- Citation Block -->
+         <cite class="text-cosmic-gold not-italic block text-xs tracking-[0.2em] uppercase font-body text-center font-medium">
+           — Ambrosio
+         </cite>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Experience -->
+  <section id="signature-offer" class="relative py-20 z-10 w-full block">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="glass-card rounded-2xl glass-card-padded border border-white/10 max-w-4xl mx-auto shadow-2xl">
+      <span class="text-xs uppercase tracking-widest text-cosmic-gold block mb-3 font-mono">The Signature Experience</span>
+      <h2 class="font-display text-3xl md:text-4xl text-white font-medium mb-4">1:1 Human Design Chart Evaluation</h2>
+      <p class="text-slate-300 text-sm max-w-2xl mx-auto mb-8 leading-relaxed">A private reading where you can finally put down what you've been carrying.<br>
+              <span class="text-white block mt-3 font-medium">Booking note:</span> The date you pick starts our 28-day process. We meet for our live session <span class="text-cosmic-gold font-medium">at least 28 days later</span>. This isn't instant clarity—it's earned clarity.</p>
+      
+      <!-- Deliverables & Pricing Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center justify-between border-t border-white/5 pt-8 mt-8">
+        <div class="text-left space-y-2">
+          <div class="text-white font-medium text-sm">Included Deliverables:</div>
+          <ul class="text-slate-400 text-xs space-y-1 list-disc list-inside">
+            <li>60-Minute Live Private Session</li>
+            <li>FREE Personalized Human Design Chart</li>
+            <li>FREE Cosmic Mirror Aura Type eBook</li>
+          </ul>
+        </div>
+        <div class="flex flex-col items-center md:items-end">
+          <div class="text-slate-500 text-xs uppercase tracking-wider font-mono">Investment</div>
+          <div class="text-4xl font-display text-cosmic-gold font-semibold">$200</div>
+          <div class="text-[10px] text-slate-400 italic mt-1 mb-4">Bespoke packages upon request</div>
+          <a href="https://calendly.com/papabrosio360/cosmic-mirror-evaluation" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-cosmic-gold text-slate-950 font-medium text-sm tracking-wide shadow-[0_0_20px_rgba(212,168,67,0.2)] hover:shadow-[0_0_30px_rgba(212,168,67,0.35)] transition-all duration-300 whitespace-nowrap active:scale-[0.98]">Book Evaluation</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Reflected Truths — Social Proof -->
+  <section class="py-20 max-w-5xl mx-auto px-6 border-t border-white/5 relative z-10">
+    <div class="text-center mb-16">
+      <span class="text-xs uppercase tracking-[0.3em] text-cosmic-gold block mb-3 font-mono">Realized Alignment</span>
+      <h3 class="font-display text-2xl md:text-3xl text-white">Reflected Truths</h3>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mt-16">
+      <div class="glass-card-gold p-6 rounded-xl border border-white/5 flex flex-col justify-between">
+        <p class="text-slate-300 text-sm italic leading-relaxed mb-6">"Most readings I've had sounded like someone reciting from a textbook. Ambrosio was nothing like that. His evaluation had space. He pointed out exactly where I'd been performing—and I hadn't even realized it."</p>
+        <span class="text-cosmic-gold font-mono text-xs tracking-wider">— Elena R., 2/4 Projector</span>
+      </div>
+      <div class="glass-card-gold p-6 rounded-xl border border-white/5 flex flex-col justify-between">
+        <p class="text-slate-300 text-sm italic leading-relaxed mb-6">"Twenty-eight days sounded absurd at first. We live in a 'gimme it now' culture. But the depth? It actually rewired something in me. I don't bounce off things the same way anymore."</p>
+        <span class="text-cosmic-gold font-mono text-xs tracking-wider">— Marcus T., 3/5 Generator</span>
+      </div>
+      <div class="glass-card-gold p-6 rounded-xl border border-white/5 flex flex-col justify-between">
+        <p class="text-slate-300 text-sm italic leading-relaxed mb-6">"As another Reflector, I know how rare it is to find someone who actually gets the open design. Ambrosio didn't try to fix me or give me a framework—he just reflected back what I already knew deep down."</p>
+        <span class="text-cosmic-gold font-mono text-xs tracking-wider">— Sarah K., 4/6 Reflector</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faqs" class="relative py-20 max-w-3xl mx-auto px-6 z-10">
+    <h3 class="font-display text-2xl md:text-3xl text-white text-center mb-12">Frequently Answered Truths</h3>
+    <div class="space-y-6 mt-12">
+      <div class="glass-card rounded-xl p-6 border border-white/5 text-left">
+        <h4 class="text-white font-medium mb-2 text-sm md:text-base">Why do your evaluations require a full lunar cycle to prepare?</h4>
+        <p class="text-xs md:text-sm text-slate-400 leading-relaxed">I work on a longer timeline because real clarity isn't rushed. We meet for your live session at least 28 days after booking—this gives space for something deeper than surface-level insights.</p>
+      </div>
+      <div class="glass-card rounded-xl p-6 border border-white/5 text-left">
+        <h4 class="text-white font-medium mb-2 text-sm md:text-base">What if I do not have my exact birth time?</h4>
+        <p class="text-xs md:text-sm text-slate-400 leading-relaxed">Exact birth data is highly crucial for mapping a pristine chart. If your time is approximate, please reach out directly prior to booking so we can evaluate potential variance paths.</p>
+      </div>
+      <div class="glass-card rounded-xl p-6 border border-white/5 text-left">
+        <h4 class="text-white font-medium mb-2 text-sm md:text-base">Can I request a custom long-term package?</h4>
+        <p class="text-xs md:text-sm text-slate-400 leading-relaxed">Yes. While the 1:1 Evaluation is the vital gateway container, custom integration guidance and long-term energetic mentorship structures are available upon direct personal request.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-cosmic-violet/20 via-transparent to-cosmic-amethyst/20"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Ready to See Yourself Clearly?</h2>
+      <p class="text-xl text-cosmic-mist mb-10 max-w-2xl mx-auto">
+        Your chart already holds the answers—you just need them reflected back in a way that feels true.
+      </p>
+      <a href="https://calendly.com/papabrosio360/cosmic-mirror-evaluation" target="_blank" rel="noopener noreferrer" class="inline-block px-10 py-5 bg-cosmic-gold text-cosmic-midnight font-semibold uppercase tracking-wider rounded hover:bg-cosmic-goldlight transition-all duration-300 animate-glow text-lg">
+        Book Your 1:1 Evaluation
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="font-display text-xl text-cosmic-gold">The Cosmic Mirror</p>
+        <p class="text-cosmic-stardust/50 text-sm">© 2026 The Cosmic Mirror. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="index.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Home</a>
+          <a href="about.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">About</a>
+          <a href="services.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Services</a>
+          <a href="resources.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Encyclopedia</a>
+          <a href="gates.html" class="text-cosmic-gold transition-colors text-sm">Gates</a>
+          <a href="channels.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Channels</a>
+          <a href="aura-types.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Aura Types</a>
+          <a href="profiles.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Profiles</a>
+          <a href="energy-centers.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Centers</a>
+          <a href="incarnation-crosses.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Crosses</a>
+          <a href="rave-iching.html" class="text-cosmic-mist hover:text-cosmic-gold transition-colors text-sm">Rave I'Ching</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
