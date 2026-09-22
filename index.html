@@ -35,17 +35,91 @@
   }
   </script>
 
-  <!-- Open Graph -->
+  <!-- Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ambrosio",
+    "url": "https://thecosmicmirror.vercel.app",
+    "jobTitle": "Human Design Practitioner",
+    "description": "6/2 Reflector with Lunar Authority offering 1:1 Human Design chart evaluations.",
+    "image": "https://thecosmicmirror.vercel.app/assets/images/ambrosio-portrait.png"
+  }
+  </script>
+
+  <!-- Service / Offer Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Human Design 1:1 Chart Evaluation",
+    "provider": {
+      "@type": "Person",
+      "name": "Ambrosio",
+      "url": "https://thecosmicmirror.vercel.app"
+    },
+    "description": "A deeply personal Human Design 1:1 chart evaluation by Ambrosio, a 6/2 Reflector with Lunar Authority. A 28-day lunar alignment process for real clarity.",
+    "offers": {
+      "@type": "Offer",
+      "price": "200",
+      "priceCurrency": "USD",
+      "name": "Cosmic Mirror Signature Evaluation",
+      "description": "60-minute live session plus written summary. A 28-day lunar alignment process.",
+      "url": "https://thecosmicmirror.vercel.app/#signature-offer"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Reflector 6/2 reading?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Reflector is the rarest Human Design type (less than 1% of people), and 6/2 is a specific profile combination. This is a 1:1 evaluation of your unique energetic strategy, authority, and incarnation cross — grounded in real lived experience, not abstract theory."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why 28 days?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Reflector's emotional wave cycles across the full lunar cycle — roughly 28 days. The process allows for genuine energetic alignment rather than a rushed session."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens during the session?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 60-minute live video call where we walk through your Type, Strategy, and Authority in the context of your lived experience. You receive a written summary afterward."
+        }
+      }
+    ]
+  }
+  </script>
   <meta property="og:type" content="website" />
   <meta property="og:title" content="The Cosmic Mirror | Reflector 1:1 Human Design Evaluations" />
   <meta property="og:description" content="Human Design 1:1 chart evaluations by Ambrosio. A 28-day lunar alignment process for real clarity." />
   <meta property="og:url" content="https://thecosmicmirror.vercel.app" />
   <meta property="og:site_name" content="The Cosmic Mirror" />
+  <meta property="og:image" content="https://thecosmicmirror.vercel.app/assets/images/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The Cosmic Mirror — Human Design 1:1 chart evaluation by Ambrosio, Reflector 6/2" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="The Cosmic Mirror | Reflector 1:1 Human Design Evaluations" />
   <meta name="twitter:description" content="Human Design 1:1 chart evaluations by Ambrosio. A 28-day lunar alignment process for real clarity." />
+  <meta name="twitter:image" content="https://thecosmicmirror.vercel.app/assets/images/og-cover.png" />
+  <meta name="twitter:image:alt" content="The Cosmic Mirror — Human Design 1:1 chart evaluation by Ambrosio, Reflector 6/2" />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
