@@ -214,10 +214,15 @@
             <p class="text-slate-300 text-sm leading-relaxed mb-4">A short, grounded orientation to your Type, Strategy, and Authority. No hype, no long wait—just enough to see whether this system actually fits.</p>
             <p class="text-slate-400 text-xs">By signing up you agree to receive email updates. No spam; unsubscribe anytime.</p>
           </div>
-          <form class="space-y-3" onsubmit="event.preventDefault(); alert('Lead capture placeholder');">
-            <input type="text" placeholder="Your name" class="encyclopedia-search w-full rounded-xl border border-white/10 text-slate-100 placeholder:text-slate-400 px-5 py-4 text-base" />
-            <input type="email" placeholder="Your email" class="encyclopedia-search w-full rounded-xl border border-white/10 text-slate-100 placeholder:text-slate-400 px-5 py-4 text-base" required />
-            <button type="submit" class="w-full px-6 py-4 rounded-full bg-cosmic-gold text-slate-950 font-medium text-sm tracking-wide shadow-[0_0_20px_rgba(212,168,67,0.2)] hover:shadow-[0_0_30px_rgba(212,168,67,0.35)] transition-all duration-300 active:scale-[0.98]">Get the Free Starter</button>
+          <form id="lead-form" class="space-y-3">
+            <label for="lead-name" class="sr-only">Your name</label>
+            <input id="lead-name" name="name" type="text" placeholder="Your name" class="encyclopedia-search w-full rounded-xl border border-white/10 text-slate-100 placeholder:text-slate-400 px-5 py-4 text-base" />
+            <label for="lead-email" class="sr-only">Your email</label>
+            <input id="lead-email" name="email" type="email" placeholder="Your email" class="encyclopedia-search w-full rounded-xl border border-white/10 text-slate-100 placeholder:text-slate-400 px-5 py-4 text-base" required />
+            <button type="submit" id="lead-submit" class="w-full px-6 py-4 rounded-full bg-cosmic-gold text-slate-950 font-medium text-sm tracking-wide shadow-[0_0_20px_rgba(212,168,67,0.2)] hover:shadow-[0_0_30px_rgba(212,168,67,0.35)] hover:scale-[1.02] transition-all duration-300 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed">
+              <span id="lead-btn-text">Get the Free Starter</span>
+              <span id="lead-btn-loading" class="hidden">Sending…</span>
+            </button>
           </form>
         </div>
       </div>

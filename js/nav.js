@@ -1,4 +1,4 @@
-// The Cosmic Mirror — Hamburger Menu Toggle
+// The Cosmic Mirror — Hamburger Menu Toggle + Form Handler
 
 document.addEventListener('DOMContentLoaded', function () {
   const menuBtn = document.getElementById('menu-toggle');
@@ -23,12 +23,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (menuBtn && menu) {
     menuBtn.addEventListener('click', function () {
       const isOpen = menu.classList.contains('opacity-100');
+      menuBtn.setAttribute('aria-expanded', !isOpen);
       if (isOpen) {
         menu.classList.remove('opacity-100', 'pointer-events-auto');
         menu.classList.add('opacity-0', 'pointer-events-none');
+        menu.setAttribute('inert', '');
       } else {
         menu.classList.remove('opacity-0', 'pointer-events-none');
         menu.classList.add('opacity-100', 'pointer-events-auto');
+        menu.removeAttribute('inert');
       }
     });
 
@@ -38,7 +41,53 @@ document.addEventListener('DOMContentLoaded', function () {
       link.addEventListener('click', function () {
         menu.classList.remove('opacity-100', 'pointer-events-auto');
         menu.classList.add('opacity-0', 'pointer-events-none');
+        menu.setAttribute('inert', '');
+        menuBtn.setAttribute('aria-expanded', 'false');
       });
+    });
+  }
+
+  // Lead capture form handler
+  const form = document.getElementById('lead-form');
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('lead-submit');
+      const btnText = document.getElementById('lead-btn-text');
+      const btnLoading = document.getElementById('lead-btn-loading');
+      const nameInput = document.getElementById('lead-name');
+      const emailInput = document.getElementById('lead-email');
+
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      btnText.classList.add('hidden');
+      btnLoading.classList.remove('hidden');
+
+      try {
+        const response = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+          }),
+        });
+
+        if (response.ok) {
+          // Success: show confirmation
+          btnText.textContent = 'Sent ✓';
+          btnLoading.classList.add('hidden');
+          btnText.classList.remove('hidden');
+          form.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (err) {
+        btnText.textContent = 'Try again';
+        btnLoading.classList.add('hidden');
+        btnText.classList.remove('hidden');
+        submitBtn.disabled = false;
+      }
     });
   }
 });
